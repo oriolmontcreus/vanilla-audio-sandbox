@@ -1,7 +1,7 @@
 import {SnackBar} from './snackbar.js';
 
 $(function () {
-    $.getJSON('../sounds/soundsDictionary.json', function (sounds) {
+    $.getJSON('./sounds/soundsDictionary.json', function (sounds) {
         initializeDrumPad(sounds);
         initializeControlPad();
         initializeDropFileArea(sounds);
@@ -123,11 +123,11 @@ function initializeControlPad() {
 
     controlPad.append($('<div id="volume-label" style="text-align:start; margin-left:42px; color: #bbb">Volume: <b>75%</b></div>'));
     controlPad.append($('<label id="volume-slider" class="slider"><input type="range" class="level" min="0" max="100" value="75"><div id="volume-icon"></div></label>'));
-    $("#volume-icon").load("../Media/Icons/volume-icon.svg");
+    $("#volume-icon").load("./Media/Icons/volume-icon.svg");
 
     controlPad.append($('<div id="bpm-label" style="text-align:start; margin-left:42px; color: #bbb">BPM: <b>75</b></div>'));
     controlPad.append($('<label id="bpm-slider" class="slider"><input type="range" class="level" min="0" max="200" value="75" style="margin-left: 20px;"><div id="bpm-icon"></div></label>'));
-    $("#bpm-icon").load("../Media/Icons/clock.svg");
+    $("#bpm-icon").load("./Media/Icons/clock.svg");
 
     $(".level").on('input', function () {
         var value = Number($(this).val());
@@ -355,22 +355,22 @@ function createButtonControls(sounds) {
 
     let playSvg, pauseSvg;
     
-    $.get('../Media/Icons/play.svg', function (data) {
+    $.get('./Media/Icons/play.svg', function (data) {
         playSvg = $(data).find('svg');
         iconDiv.empty().append(playSvg);
     });
 
-    $.get('../Media/Icons/pause.svg', function (data) {
+    $.get('./Media/Icons/pause.svg', function (data) {
         pauseSvg = $(data).find('svg');
     });
 
     var addButton = $('<button id="addCompass"></button>');
     $(".controlsRow").append(addButton);
-    $("#addCompass").load("../Media/Icons/plus.svg");
+    $("#addCompass").load("./Media/Icons/plus.svg");
 
     var removeButton = $('<button id="removeCompass"></button>');
     $(".controlsRow").append(removeButton);
-    $("#removeCompass").load("../Media/Icons/minus.svg");
+    $("#removeCompass").load("./Media/Icons/minus.svg");
 
     addButton.click(function () {
         if (numColumns < 20)
