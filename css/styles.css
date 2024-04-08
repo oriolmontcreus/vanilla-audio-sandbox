@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    user-select: none;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+body {
+    background-color: #252525;
+    height: calc(100vh - 60px);
+    margin: 50px 10px 10px 10px;
+}
+
+#drum-pad-panel {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    width: 350px;
+    padding: 10px;
+    background-color: #333;
+    border: 4px solid black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#handle {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    top: -48px;
+    left: -4px;
+    width: 350px;
+    height: 30px;
+    background-color: rgba(197, 16, 233, 0.5);
+    border-top: 4px solid black;
+    border-right: 4px solid black;
+    border-left: 4px solid black;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    cursor: move;
+}
+
+.drumpad-button {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    background-color: #252525;
+    color: whitesmoke;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 4px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CONTROL-PAD */
+
+.control-pad {
+    position: absolute;
+    width: 200px;
+    height: fit-content;
+    background-color: #333;
+    border: 4px solid black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.control-pad #handle,
+.drop-file-area #handle {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    top: -48px;
+    left: -4px;
+    width: 200px;
+    height: 30px;
+    background-color: rgba(197, 16, 233, 0.5);
+    border-top: 4px solid black;
+    border-right: 4px solid black;
+    border-left: 4px solid black;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    cursor: move;
+}
+
+/* ADD AUDIO */
+.drop-file-area {
+    width: 200px;
+    height: 190px;
+    background-color: #333;
+    border: 4px solid black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px;
+}
+
+#drop-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 3px dashed #bbb;
+    transition: border 0.5s ease;
+}
+
+#drop-area:hover {
+    border-color: rgba(197, 16, 233, 0.5);
+}
+
+.drop-text {
+    text-align: center;
+    color: #bbb;
+}
+
+#file-picker {
+    margin-top: 10px;
+}
+
+/* VOLUME SLIDER */
+
+.slider {
+    /* slider */
+    --slider-width: 100%;
+    --slider-height: 6px;
+    --slider-bg: rgb(82, 82, 82);
+    --slider-border-radius: 999px;
+    /* level */
+    --level-color: #fff;
+    --level-transition-duration: .1s;
+    /* icon */
+    --icon-margin: 15px;
+    --icon-color: var(--slider-bg);
+    --icon-size: 25px;
+}
+
+.slider {
+    cursor: pointer;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.slider.disabled {
+    pointer-events: none;
+    opacity: .2;
+}
+
+.slider .volume {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: var(--icon-margin);
+    color: var(--icon-color);
+    width: var(--icon-size);
+    height: auto;
+}
+
+.slider .level {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: var(--slider-width);
+    height: var(--slider-height);
+    background: var(--slider-bg);
+    overflow: hidden;
+    border-radius: var(--slider-border-radius);
+    -webkit-transition: height var(--level-transition-duration);
+    -o-transition: height var(--level-transition-duration);
+    transition: height var(--level-transition-duration);
+    cursor: inherit;
+}
+
+.slider .level::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
+    -webkit-box-shadow: -200px 0 0 200px var(--level-color);
+    box-shadow: -200px 0 0 200px var(--level-color);
+}
+
+.slider:hover .level {
+    height: calc(var(--slider-height) * 2);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 600px) {
+    body {
+        margin: 50px 0 10px 0;
+    }
+}
+
+/* LOADER */
+
+.loaderContainer {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #252525;
+}
+
+.loading-wave {
+    width: 300px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.loading-bar {
+    width: 20px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: rgba(197, 16, 233, 0.5);
+    border-radius: 5px;
+    animation: loading-wave-animation 1s ease-in-out infinite;
+}
+
+.loading-bar:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.loading-bar:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.loading-bar:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+@keyframes loading-wave-animation {
+    0% {
+        height: 10px;
+    }
+
+    50% {
+        height: 50px;
+    }
+
+    100% {
+        height: 10px;
+    }
+}
+
+/* Switch button */
+
+.toggle-switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 24px;
+}
+
+.toggle-switch .toggle-input {
+    display: none;
+}
+
+.toggle-switch .toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 24px;
+    background-color: rgb(250, 58, 58);
+    border-radius: 34px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-switch .toggle-label::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.toggle-switch .toggle-input:checked+.toggle-label {
+    background-color: #4CAF50;
+}
+
+.toggle-switch .toggle-input:checked+.toggle-label::before {
+    transform: translateX(16px);
+}
+
+.toggle-switch.dark .toggle-label {
+    background-color: #4B4B4B;
+}
+
+.toggle-switch.dark .toggle-input:checked+.toggle-label {
+    background-color: #717171;
+}
+
+.toggle-switch.dark .toggle-input:checked+.toggle-label::before {
+    transform: translateX(16px);
+}
+
+/* CHANNEL RACK */
+
+.channel-rack {
+    position: absolute;
+    width: 850px;
+    height: fit-content;
+    background-color: #333;
+    border: 4px solid black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.channel-rack #handle {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    top: -48px;
+    left: -4px;
+    width: 850px;
+    height: 30px;
+    background-color: rgba(197, 16, 233, 0.5);
+    border-top: 4px solid black;
+    border-right: 4px solid black;
+    border-left: 4px solid black;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    cursor: move;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    transition: background-color 0.5s ease;
+}
+
+.sound-name {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.compasses {
+    display: flex;
+    justify-content: space-between;
+    flex: 3;
+}
+
+.compass-end {
+    border: 3px solid rgb(250, 58, 58) !important; 
+}
+
+.sound-indicator {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: 3px solid black;
+    transition: background-color 0.3s ease;
+}
+
+.column-icon {
+    width: 18px;
+    height: 18px;
+    margin: 10px;
+    border-radius: 50%;
+    border: 3px solid black;
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+.sound-indicator.active {
+    background-color: rgba(197, 16, 233, 0.5);
+}
+
+.controlsRow {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+#channelRackToggle, #addCompass, #removeCompass {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 4px solid black;
+    background-color: rgba(197, 16, 233, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+#channelRackToggle:hover, #addCompass:hover, #removeCompass:hover {
+    background-color: rgba(197, 16, 233, 0.7);
+    cursor: pointer; 
+}
+
+/*Bug play-icon seems uncentered (fix of visual effect, it is actually well centered)*/
+#channelRackToggle.play-icon svg {
+    position: relative;
+    left: 1px; 
+}
+
+#toggle-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#column-icons-row {
+    height: 50px;
+    overflow: hidden; 
+}
