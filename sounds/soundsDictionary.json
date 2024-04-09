@@ -1,17 +1,17 @@
 [
     {
         "name": "kick",
-        "path": "../sounds/kick.wav", 
+        "path": "./sounds/kick.wav", 
         "key": 49
     },
     {
         "name": "hi-hat",
-        "path": "../sounds/hi-hat.wav",
+        "path": "./sounds/hi-hat.wav",
         "key": 50
     },
     {
         "name": "snare",
-        "path": "../sounds/snare.wav",
+        "path": "./sounds/snare.wav",
         "key": 51
     }
 ]
