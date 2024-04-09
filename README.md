@@ -34,11 +34,12 @@ To get started with Sound Sandbox, it's recommended to use the [Live Server](htt
   <br>
   <img src="./preview2.png" alt="Preview image 2" width="600">
   <br>
+
   <img src="./preview3.png" alt="Preview image 3" width="600">
   <br>
-  <video width="600" controls>
-    <source src="./previewVideo.mp4" type="video/mp4">
-    If you see this message, your browser does not support the video tag.
-  </video>
 </p>
+
+https://github.com/oriolmontcreus/vanilla-audio-sandbox/assets/58004352/dfad9d59-2b18-4a63-8635-792568cc1f27
+
+
 
