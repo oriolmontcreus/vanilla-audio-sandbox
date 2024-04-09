@@ -1,6 +1,7 @@
 # 🎵 Sound Sandbox 🎵
+[Try it here (Github Pages)](https://oriolmontcreus.github.io/vanilla-audio-sandbox/)
 
-Sound Sandbox is an interactive web application that allows users to create and manipulate sounds in a fun and intuitive way. 
+Sound Sandbox is an interactive web application that allows users to create and manipulate sounds in a fun and intuitive way.
 
 ## 🌟 Features
 
@@ -25,3 +26,19 @@ To get started with Sound Sandbox, it's recommended to use the [Live Server](htt
 | JavaScript | Used for creating interactive web content. | [Learn More](https://developer.mozilla.org/en-US/docs/Web/JavaScript) |
 | jQuery UI | A curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library. | [Learn More](https://jqueryui.com/) |
 | js-snackbar | A simple, lightweight JavaScript library for displaying snackbars. | [GitHub Repository](https://github.com/mickelsonmichael/js-snackbar/) |
+
+## 📸 Preview
+
+<p align="center">
+  <img src="./preview1.png" alt="Preview image 1" width="600">
+  <br>
+  <img src="./preview2.png" alt="Preview image 2" width="600">
+  <br>
+  <img src="./preview3.png" alt="Preview image 3" width="600">
+  <br>
+  <video width="600" controls>
+    <source src="./previewVideo.mp4" type="video/mp4">
+    If you see this message, your browser does not support the video tag.
+  </video>
+</p>
+
