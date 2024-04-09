@@ -39,6 +39,8 @@ To get started with Sound Sandbox, it's recommended to use the [Live Server](htt
   <br>
 </p>
 
+(Enable audio!!)
+
 https://github.com/oriolmontcreus/vanilla-audio-sandbox/assets/58004352/dfad9d59-2b18-4a63-8635-792568cc1f27
 
 
